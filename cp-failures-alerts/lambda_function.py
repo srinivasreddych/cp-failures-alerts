@@ -6,8 +6,14 @@ import sys
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-cp_client=boto3.client('codepipeline')
-sns_client = boto3.client('sns')
+#Establishing client connections with CodePipeline and SNS
+try:
+    cp_client=boto3.client('codepipeline')
+    sns_client = boto3.client('sns')
+except Exception as e:
+    raise Exception("Failed to get the client connection: %s" % str(e))
+
+#Getting the env var from the CFN Stack
 sns_topic_arn=os.getenv(sns_topic_arn)
 
 def cp-failures-alerts(event, context):
