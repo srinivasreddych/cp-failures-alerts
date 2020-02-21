@@ -1,5 +1,5 @@
 # cp-failures-alerts
-This solution will provide alerts on failures occured in AWS CodePipeline
+This solution will provide alerts on failures occured in AWS CodePipeline. By design, CodePipeline provides Action/Stage/Pipeline level events. Stage level events based invocation will be helpful in understanding failures on all actions within a stage and in any given stage within a pipeline.
 
 ## Commands to run:
 
